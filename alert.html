@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+
     <style>
         *{
             /* border: .4px solid red; */
@@ -11,18 +14,47 @@
         body{
             background: black;
         }
+        .alert-border{
+            /* border: 1px solid red; */
+            position: absolute !important;
+            width: max-content;
+            left: 50%; 
+            top: -5rem;
+            transform: translateX(-50%);
+            display: flex;
+            justify-content: center;
+            animation: alert-border 4s alternate;
+        }
+        @keyframes alert-border{
+            0%{
+                top: -5rem;
+            }
+            10%{
+                top: 1rem;
+            }
+            15%{
+                top: 1rem;
+            }
+            85%{
+                top: 1rem;
+            }
+            100%{
+                top: -5rem;
+            }
+        }
+
         .alert{
             border: 1px solid white;
             color: white;
             padding: .3rem;
             width: max-content;
+            height: 2.8rem;
+            /* width: 2rem; */
+            /* aspect-ratio: 1/1 !important; */
             border-radius: 50rem;
 
-            position: absolute;
-            left: 50%;
-            /* top: -4rem; */
-            transform: translateX(-50%);
-            overflow: hidden;
+            /* position: absolute; */
+            
 
             display: flex;
             align-items: center;
@@ -32,16 +64,22 @@
 
         @keyframes alert{
             0%{
-                top: -4rem;
+                /* top: -5rem; */
             }
-            25%{
-                top: 1rem;
+            10%{
+                /* top: 1rem; */
             }
-            70%{
-                top: 1rem;
+            15%{
+                width: 110%;
+                /* top: 1rem; */
+            }
+            85%{
+                width: 110%;
+                /* top: 1rem; */
             }
             100%{
-                top: -4rem;
+                width: 0% !important;
+                /* top: -5rem; */
             }
         }
 
@@ -56,18 +94,18 @@
             object-position: center;
             overflow: hidden;
             /* transform: scale(1.4); */
-            z-index: 2;
-            animation: icon 2s;
+            z-index: 20 !important;
+            animation: icon 1s;
         }
 
         @keyframes icon{
             0%{
                 transform: scale(1.4);
             }
-            40%{
+            /* 10%{
                 transform: scale(1.4);
-            }
-            100%{
+            } */
+            100%{ 
                 transform: scale(1);
             }
         }
@@ -82,40 +120,59 @@
 
         .text{
             padding: 0 .5rem;
-            position: absolute;
+            /* position: absolute; */
             /* display: none; */
-            /* opacity: 0; */
-            margin-left: -100;
-            animation: text 3s;
+            opacity: 0;
+            /* margin-left: -100; */
+            word-wrap: normal;
+            animation: text 4s;
         }
 
         @keyframes text{
             0%{
                 /* position: absolute; */
                 /* display: none; */
-                margin-left: -100%;
+                /* margin-left: -100%; */
+                opacity: 0;
             }
-            60%{
+            10%{
+                opacity: 0;
+            }
+            15%{
+                opacity: 1;
+                /* position: relative; */
+                /* display: none; */
+                /* margin-left: -100%; */
+            }
+            75%{
+                opacity: 1;
+                /* position: relative; */
+                /* display: none; */
+                /* margin-left: -100%; */
+            } 
+            100%{
+                opacity: 0;
                 /* position: relative; */
                 display: none;
-                margin-left: -100%;
-            }
-            100%{
-                /* position: relative; */
-                /* display: block; */
             }
         }
 
     </style>
 </head>
 <body>
-    <div class="alert">
-        <span class="icon">
-            <img src="https://raw.githubusercontent.com/TeerapatSuksamang/election_project/refs/heads/main/img/bg.png" alt="">
-        </span>
-        <span class="text">
-            this is alert
-        </span>
+    <div class="alert-border">
+        <div class="alert">
+            <span class="icon">
+                <img src="https://raw.githubusercontent.com/TeerapatSuksamang/election_project/refs/heads/main/img/bg.png" alt="">
+            </span>
+            <span class="text">
+                รหัสผ่านไม่ถูกต้อง 
+            </span>
+        </div>
     </div>
+
+    <center>
+        <a href="" class="btn btn-primary align" style="margin-top: 50%;">lorem</a>
+    </center>
 </body>
 </html>
